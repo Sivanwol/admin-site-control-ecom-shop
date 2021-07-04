@@ -2,7 +2,8 @@
   "name": "admin-site-control-ecom-shop",
   "version": "0.1.0",
   "private": true,
-  "license": "none",
+  "license": "UNLICENSED",
+  "repository": { "type": "git", "url": "https://github.com/Sivanwol/admin-site-control-ecom-shop.git" },
   "author": {
     "name": "Sivan Wolberg",
     "email": "sivan@wolberg.pro"
