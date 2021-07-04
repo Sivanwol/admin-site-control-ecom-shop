@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "yarn run lint && next build",
     "start": "next start",
     "analyze": "cross-env ANALYZE=1 next build && cat .next/stats.txt",
     "type-check": "tsc --pretty --noEmit",
