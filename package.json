@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "license": "UNLICENSED",
-  "repository": { "type": "git", "url": "https://github.com/Sivanwol/admin-site-control-ecom-shop.git" },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sivanwol/admin-site-control-ecom-shop.git"
+  },
   "author": {
     "name": "Sivan Wolberg",
     "email": "sivan@wolberg.pro"
@@ -35,9 +38,17 @@
   },
   "dependencies": {
     "@next/bundle-analyzer": "^9.1.4",
+    "@types/lodash": "^4.14.170",
+    "@types/redux-actions": "^2.6.1",
+    "@types/redux-devtools": "^3.7.0",
+    "@types/superagent": "^4.1.12",
+    "@types/url-join": "^4.0.0",
     "cross-env": "^6.0.3",
+    "history": "^5.0.0",
+    "lodash": "^4.17.21",
     "next": "11.0.1",
     "next-intl": "^1.0.1",
+    "next-redux-wrapper": "~1.3.2",
     "nprogress": "^0.2.0",
     "primeflex": "^2.0.0",
     "primeicons": "^4.1.0",
@@ -46,14 +57,18 @@
     "react-dom": "17.0.2",
     "react-helmet": "^6.0.0",
     "react-redux": "^7.1.0",
+    "react-redux-annotation": "^1.0.10",
     "react-transition-group": "^4.4.2",
     "redux": "^4.0.4",
-    "redux-devtools-extension": "^2.13.8",
+    "redux-actions": "^2.6.5",
+    "redux-freeze": "^0.1.7",
+    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "sass": "1.26.3"
+    "sass": "1.26.3",
+    "superagent": "^6.1.0",
+    "url-join": "^4.0.1"
   },
   "devDependencies": {
-    "@styled-jsx/plugin-sass": "^3.0.0",
     "@compiled/react": "^0.6.7",
     "@compiled/webpack-loader": "^0.6.7",
     "@storybook/addon-actions": "^6.1.11",
@@ -80,14 +95,27 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.0.0",
     "jest-css-modules-transform": "^4.2.0",
-    "ts-jest": "^26.0.0",
-    "ts-node": "^9.0.0",
     "jest-watch-typeahead": "^0.6.1",
     "lint-staged": "^10.0.10",
     "prettier": "^2.0.2",
     "react-is": "^17.0.1",
+    "redux-devtools-extension": "^2.13.8",
     "serve": "^11.3.2",
+    "ts-jest": "^26.0.0",
+    "ts-node": "^9.0.0",
     "typescript": "^4.3.5",
     "webpack-bundle-size-analyzer": "^2.7.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
