@@ -2,7 +2,7 @@ import { combineReducers } from 'redux'
 import network from './network'
 
 export const reducersMap = {
-  network,
+    network,
 }
 
 export default combineReducers(reducersMap)

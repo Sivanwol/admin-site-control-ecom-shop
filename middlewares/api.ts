@@ -29,8 +29,15 @@ export function apiMiddleware({ dispatch }: Store<State>) {
         }
 
         const { payload } = action
-        const { path, baseUrl, onSuccess, onError, networkLabel, data, method } =
-            payload
+        const {
+            path,
+            baseUrl,
+            onSuccess,
+            onError,
+            networkLabel,
+            data,
+            method,
+        } = payload
         const headers: Record<string, string> = {}
         const requestUrl = urljoin(baseUrl || BASE_URL, path)
 
@@ -53,7 +60,11 @@ export function apiMiddleware({ dispatch }: Store<State>) {
             })
 
             if (onSuccess) {
-                dispatchActions(dispatch, onSuccess, response.body || response.text)
+                dispatchActions(
+                    dispatch,
+                    onSuccess,
+                    response.body || response.text
+                )
             }
         } catch (error) {
             if (IS_DEBUG_MODE) {

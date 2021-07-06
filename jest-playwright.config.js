@@ -1,7 +1,7 @@
 module.exports = {
-    browsers: ["chromium", "firefox", "webkit"],
+    browsers: ['chromium', 'firefox', 'webkit'],
     exitOnPageError: false, // GitHub currently throws errors
     launchOptions: {
-        headless: true
-    }
+        headless: true,
+    },
 }
