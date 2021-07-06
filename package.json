@@ -1,121 +1,124 @@
 {
-  "name": "admin-site-control-ecom-shop",
-  "version": "0.1.0",
-  "private": true,
-  "license": "UNLICENSED",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Sivanwol/admin-site-control-ecom-shop.git"
-  },
-  "author": {
-    "name": "Sivan Wolberg",
-    "email": "sivan@wolberg.pro"
-  },
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "analyze": "cross-env ANALYZE=1 next build && cat .next/stats.txt",
-    "type-check": "tsc --pretty --noEmit",
-    "format": "prettier --write .",
-    "lint": "eslint --config .eslintrc --ext ts --ext tsx --ext js",
-    "test": "jest",
-    "test-all": "yarn lint && yarn type-check && yarn test",
-    "storybook": "start-storybook -p 6006 --no-dll",
-    "build-storybook": "build-storybook --no-dll"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn run type-check"
+    "name": "admin-site-control-ecom-shop",
+    "version": "0.1.0",
+    "private": true,
+    "license": "UNLICENSED",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Sivanwol/admin-site-control-ecom-shop.git"
+    },
+    "author": {
+        "name": "Sivan Wolberg",
+        "email": "sivan@wolberg.pro"
+    },
+    "scripts": {
+        "dev": "next",
+        "build": "next build",
+        "start": "next start",
+        "analyze": "cross-env ANALYZE=1 next build && cat .next/stats.txt",
+        "type-check": "tsc --pretty --noEmit",
+        "format": "prettier --write .",
+        "lint": "eslint --config .eslintrc --ext ts --ext tsx --ext js",
+        "test": "jest",
+        "test-all": "yarn lint && yarn type-check && yarn test",
+        "storybook": "start-storybook -p 6006 --no-dll",
+        "build-storybook": "build-storybook --no-dll"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged",
+            "pre-push": "yarn run type-check"
+        }
+    },
+    "lint-staged": {
+        "*.@(ts|tsx)": [
+            "yarn lint",
+            "yarn format"
+        ]
+    },
+    "dependencies": {
+        "@next/bundle-analyzer": "^9.1.4",
+        "@types/lodash": "^4.14.170",
+        "@types/redux-actions": "^2.6.1",
+        "@types/redux-devtools": "^3.7.0",
+        "@types/superagent": "^4.1.12",
+        "@types/url-join": "^4.0.0",
+        "cross-env": "^6.0.3",
+        "history": "^5.0.0",
+        "lodash": "^4.17.21",
+        "next": "11.0.1",
+        "next-intl": "^1.0.1",
+        "next-redux-wrapper": "~1.3.2",
+        "nprogress": "^0.2.0",
+        "primeflex": "^2.0.0",
+        "primeicons": "^4.1.0",
+        "primereact": "^6.5.0-rc.2",
+        "react": "17.0.2",
+        "react-dom": "17.0.2",
+        "react-helmet": "^6.0.0",
+        "react-redux": "^7.1.0",
+        "react-redux-annotation": "^1.0.10",
+        "react-transition-group": "^4.4.2",
+        "redux": "^4.0.4",
+        "redux-actions": "^2.6.5",
+        "redux-thunk": "^2.3.0",
+        "sass": "1.26.3",
+        "superagent": "^6.1.0",
+        "url-join": "^4.0.1"
+    },
+    "devDependencies": {
+        "@compiled/react": "^0.6.7",
+        "@compiled/webpack-loader": "^0.6.7",
+        "@storybook/addon-actions": "^6.1.11",
+        "@storybook/addon-essentials": "^6.1.11",
+        "@storybook/addon-links": "^6.1.11",
+        "@storybook/react": "^6.1.11",
+        "@styled-jsx/plugin-sass": "^3.0.0",
+        "@testing-library/jest-dom": "^5.0.0",
+        "@testing-library/react": "^11.0.0",
+        "@testing-library/user-event": "^13.0.0",
+        "@types/jest": "^26.0.23",
+        "@types/node": "^14.14.25",
+        "@types/react": "17.0.13",
+        "@types/redux-logger": "^3.0.8",
+        "@typescript-eslint/eslint-plugin": "^4.14.2",
+        "@typescript-eslint/parser": "^4.14.2",
+        "babel-jest": "^27.0.2",
+        "babel-loader": "^8.1.0",
+        "jest-playwright-preset": "^1.6.0",
+        "playwright": "^1.11.1",
+        "eslint": "7.30.0",
+        "eslint-config-next": "11.0.1",
+        "eslint-config-prettier": "^7.2.0",
+        "eslint-plugin-react": "^7.19.0",
+        "faker": "^4.1.0",
+        "husky": "^4.2.3",
+        "identity-obj-proxy": "^3.0.0",
+        "jest": "^26.0.0",
+        "jest-css-modules-transform": "^4.2.0",
+        "jest-watch-typeahead": "^0.6.1",
+        "lint-staged": "^10.0.10",
+        "prettier": "^2.0.2",
+        "react-is": "^17.0.1",
+        "redux-devtools-extension": "^2.13.8",
+        "redux-freeze": "^0.1.7",
+        "redux-logger": "^3.0.6",
+        "serve": "^11.3.2",
+        "ts-jest": "^26.0.0",
+        "ts-node": "^9.0.0",
+        "typescript": "^4.3.5",
+        "webpack-bundle-size-analyzer": "^2.7.0"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
     }
-  },
-  "lint-staged": {
-    "*.@(ts|tsx)": [
-      "yarn lint",
-      "yarn format"
-    ]
-  },
-  "dependencies": {
-    "@next/bundle-analyzer": "^9.1.4",
-    "@types/lodash": "^4.14.170",
-    "@types/redux-actions": "^2.6.1",
-    "@types/redux-devtools": "^3.7.0",
-    "@types/superagent": "^4.1.12",
-    "@types/url-join": "^4.0.0",
-    "cross-env": "^6.0.3",
-    "history": "^5.0.0",
-    "lodash": "^4.17.21",
-    "next": "11.0.1",
-    "next-intl": "^1.0.1",
-    "next-redux-wrapper": "~1.3.2",
-    "nprogress": "^0.2.0",
-    "primeflex": "^2.0.0",
-    "primeicons": "^4.1.0",
-    "primereact": "^6.5.0-rc.2",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-helmet": "^6.0.0",
-    "react-redux": "^7.1.0",
-    "react-redux-annotation": "^1.0.10",
-    "react-transition-group": "^4.4.2",
-    "redux": "^4.0.4",
-    "redux-actions": "^2.6.5",
-    "redux-freeze": "^0.1.7",
-    "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0",
-    "sass": "1.26.3",
-    "superagent": "^6.1.0",
-    "url-join": "^4.0.1"
-  },
-  "devDependencies": {
-    "@compiled/react": "^0.6.7",
-    "@compiled/webpack-loader": "^0.6.7",
-    "@storybook/addon-actions": "^6.1.11",
-    "@storybook/addon-essentials": "^6.1.11",
-    "@storybook/addon-links": "^6.1.11",
-    "@storybook/react": "^6.1.11",
-    "@styled-jsx/plugin-sass": "^3.0.0",
-    "@testing-library/jest-dom": "^5.0.0",
-    "@testing-library/react": "^11.0.0",
-    "@testing-library/user-event": "^13.0.0",
-    "@types/jest": "^26.0.23",
-    "@types/node": "^14.14.25",
-    "@types/react": "17.0.13",
-    "@typescript-eslint/eslint-plugin": "^4.14.2",
-    "@typescript-eslint/parser": "^4.14.2",
-    "babel-jest": "^27.0.2",
-    "babel-loader": "^8.1.0",
-    "eslint": "7.30.0",
-    "eslint-config-next": "11.0.1",
-    "eslint-config-prettier": "^7.2.0",
-    "eslint-plugin-react": "^7.19.0",
-    "faker": "^4.1.0",
-    "husky": "^4.2.3",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^26.0.0",
-    "jest-css-modules-transform": "^4.2.0",
-    "jest-watch-typeahead": "^0.6.1",
-    "lint-staged": "^10.0.10",
-    "prettier": "^2.0.2",
-    "react-is": "^17.0.1",
-    "redux-devtools-extension": "^2.13.8",
-    "serve": "^11.3.2",
-    "ts-jest": "^26.0.0",
-    "ts-node": "^9.0.0",
-    "typescript": "^4.3.5",
-    "webpack-bundle-size-analyzer": "^2.7.0"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
 }

@@ -1,10 +1,11 @@
 Main Task for the infra system
-☐ Add i18n system (from next system)
-☐ Add config system (from next system)
-☐ Add Setting system that data will come from the server side (this is the config server side system)
 ☐ add logger system
+☐ Add config system (from next system)
+☐ Add i18n system (from next system)
 ☐ add layout system
 ☐ add unprotected page
+☐ Build first test for the unprotected page (that it existed and it there is a title) - this place holder for now
+☐ Add Setting system that data will come from the server side (this is the config server side system)
 ☐ Add Basic logic with firebase system
 ☐ Add basic forget password page with firebase system
 ☐ add basic register page
