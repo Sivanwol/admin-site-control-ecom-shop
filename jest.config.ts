@@ -9,8 +9,6 @@ const config: InitialOptionsTsJest = {
     transform: {
         '^.+\\.ts$': 'ts-jest',
     },
-    testPathIgnorePatterns: ['<rootDir>[/\\\\](node_modules|.next)[/\\\\]'],
-    transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
     testEnvironmentOptions: {
         'jest-playwright': {
             browsers: ['chromium', 'firefox', 'webkit'],
