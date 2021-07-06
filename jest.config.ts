@@ -11,7 +11,8 @@ const config: InitialOptionsTsJest = {
     },
     testEnvironmentOptions: {
         'jest-playwright': {
-            browsers: ['chromium', 'firefox', 'webkit'],
+            // browsers: ['chromium', 'firefox', 'webkit'], // we active this if we need for more test browsers (later date)
+            browsers: ['chromium'],
             exitOnPageError: false, // GitHub currently throws errors
             launchOptions: {
                 headless: true,

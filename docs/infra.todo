@@ -5,7 +5,7 @@ Main Task for the infra system
 ☐ add layout system
 ☐ add unprotected page
 ✔ Build test infra system - this place holder for now @done (7/6/2021, 11:48:39 PM)
-☐ add small test for just see all work on github page
+✔ add small test for just see all work on github page @done(21-07-07 00:27)
 ☐ add test for unprotected page just basic testing see in the basic test (match title, and page working in general)
 ☐ Add Setting system that data will come from the server side (this is the config server side system , worth check if i can use firebase in some way) 
 ☐ Add Basic logic with firebase system

@@ -2,6 +2,7 @@ import { chromium, Browser, Page } from 'playwright'
 // Needs to be higher than the default Playwright timeout
 jest.setTimeout(40 * 1000)
 // this test it is general test see jest working with Playwright so basic test on github
+
 describe('GitHub', () => {
     let browser: Browser
     let page: Page
