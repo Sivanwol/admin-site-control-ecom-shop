@@ -1,11 +1,15 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
-import { useTranslation } from 'next-i18next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useRouter } from 'next/router'
+import { useI18n, I18nProps } from 'next-rosetta'
+import { MyLocale } from '../i18n'
+import { GetStaticProps } from 'next'
 
 export default function Home() {
-    const { t } = useTranslation('unprotect-page')
+    const { locale, locales, asPath } = useRouter()
+    const i18n = useI18n<MyLocale>()
+    const { t } = i18n
     return (
         <div className={styles.container}>
             <Head>
@@ -22,7 +26,7 @@ export default function Home() {
                     Welcome to <a href="https://nextjs.org">Next.js!</a>
                 </h1>
 
-                <p className={styles.description}>{t('h1')}</p>
+                <p className={styles.description}>{t('subtitle')}</p>
 
                 <div className={styles.grid}>
                     <a href="https://nextjs.org/docs" className={styles.card}>
@@ -86,8 +90,10 @@ export default function Home() {
     )
 }
 
-export const getStaticProps = async ({ locale: any }) => ({
-    props: {
-        ...(await serverSideTranslations(locale, ['common', 'unprotect-page'])),
-    },
-})
+export const getStaticProps: GetStaticProps<I18nProps<MyLocale>> = async (
+    context
+) => {
+    const locale = context.locale || context.defaultLocale
+    const { table = {} } = await import(`../i18n/${locale}`)
+    return { props: { table } } // Passed to `/pages/_app.tsx`
+}
