@@ -5,5 +5,5 @@ module.exports = {
     generateRobotsTxt: true,
     exclude: [],
     sitemapSize: 7000,
-    reactStrictMode: true
+    reactStrictMode: true,
 }
