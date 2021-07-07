@@ -1,9 +1,11 @@
 Main Task for the infra system
 ✔ add logger system @done (7/6/2021, 11:48:27 PM)
-☐ Add config system (from next system)
-☐ Add i18n system (from next system)
+✔ Add config system (from next system) @done(21-07-07 10:18)
+☐ add seo support
+✔ add sitemap support @done(21-07-07 11:37)
+✔ Add i18n system (from next system) @done(21-07-07 11:37)
 ☐ add layout system
-☐ add unprotected page
+✔ add unprotected page @done(21-07-07 11:37)
 ✔ Build test infra system - this place holder for now @done (7/6/2021, 11:48:39 PM)
 ✔ add small test for just see all work on github page @done(21-07-07 00:27)
 ☐ add test for unprotected page just basic testing see in the basic test (match title, and page working in general)

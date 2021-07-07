@@ -4,7 +4,7 @@ import 'primeflex/primeflex.css'
 import 'primereact/resources/themes/md-dark-indigo/theme.css'
 import '../styles/main.scss'
 import type { AppProps } from 'next/app'
-
+import { appWithTranslation } from 'next-i18next'
 import { Provider } from 'react-redux'
 import store from '../redux/store'
 function MyApp({ Component, pageProps }: AppProps) {
@@ -14,4 +14,4 @@ function MyApp({ Component, pageProps }: AppProps) {
         </Provider>
     )
 }
-export default MyApp
+export default appWithTranslation(MyApp)
