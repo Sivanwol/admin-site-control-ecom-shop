@@ -4,6 +4,7 @@ declare global {
     interface NexusGenCustomInputMethods<TypeName extends string> {
         dateTime<FieldName extends string>(
             fieldName: FieldName,
+            // @ts-ignore
             opts?: core.ScalarInputFieldConfig<
                 core.GetGen3<'inputTypes', TypeName, FieldName>
             >
@@ -61,10 +62,10 @@ export type NexusGenUnionNames = never
 export interface NexusGenTypes {
     context: any
     inputTypes: NexusGenInputs
-    rootTypes: NexusGenRootTypes
-    argTypes: NexusGenArgTypes
-    fieldTypes: NexusGenFieldTypes
-    allTypes: NexusGenAllTypes
+    // rootTypes: NexusGenRootTypes
+    // argTypes: NexusGenArgTypes
+    // fieldTypes: NexusGenFieldTypes
+    // allTypes: NexusGenAllTypes
     inheritedFields: NexusGenInheritedFields
     objectNames: NexusGenObjectNames
     inputNames: NexusGenInputNames

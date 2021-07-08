@@ -11,8 +11,20 @@ Main Task for the infra system
         ✔ add simple client request @done(21-07-08 16:11)
         ✘ add new route that the socket will happend @cancelled(21-07-08 16:11)
 ✔ add sitemap support @done(21-07-07 11:37)
+Socket IO Client:
+    ☐ add basic layout for dynamic event triggers with hooks
+    ☐ add field test
+    ☐ fix bug that will getting into a look of connect and disconnect when it connected and request the event
 Graphql server:
-    add support 
+    ✔ add support @done(21-07-08 20:26)
+    ✔ make schame gql auto @done(21-07-08 20:26)
+    ☐ build basic methods and queries
+    ☐ add auth system
+    ☐ integrate with firebase user system
+    ☐ make sure server run
+Graphql client:
+    ☐ add provider and relevent hooks
+    ☐ make basic call with redux call for verify all work
 
 ✔ Add i18n system (from next system) @done(21-07-07 11:37)
 ☐ add layout system
