@@ -13,6 +13,7 @@
 /out/
 .vscode/
 .idea/
+.tsbuildinfo
 # production
 /build
 *.iml
