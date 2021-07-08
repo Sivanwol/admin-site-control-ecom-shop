@@ -22,7 +22,10 @@ app.prepare().then(async () => {
         socketio.on('connection', (socket: Socket) => {
             console.log('connection')
             socket.emit('status', 'Hello from Socket.io')
-
+            socket.on('test_event', (data: any) => {
+                console.log('websocket recived test_event')
+                socket.emit('test_event', 'Hello from Socket.io')
+            })
             socket.on('disconnect', () => {
                 console.log('client disconnected')
             })

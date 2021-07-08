@@ -5,11 +5,11 @@ Main Task for the infra system
 ✔ add support to socket.io @done(21-07-07 16:59)
     add client side support follow this git repo for road map 
     (https://github.com/arch-inc/nextjs-socketio-chat-example/blob/master/components/contexts/socket/SocketProvider.tsx)
-        ☐ add socket provider
-        ☐ add socket hooks
-        ☐ add simple commamds  on server
-        ☐ add simple client request
-        ☐ add new route that the socket will happend
+        ✔ add socket provider @started(21-07-08 14:22) @done(21-07-08 16:11) @lasted(1h49m39s)
+        ✔ add socket hooks @done(21-07-08 16:11)
+        ✔ add simple commamds  on server @done(21-07-08 16:11)
+        ✔ add simple client request @done(21-07-08 16:11)
+        ✘ add new route that the socket will happend @cancelled(21-07-08 16:11)
 ✔ add sitemap support @done(21-07-07 11:37)
 ✔ Add i18n system (from next system) @done(21-07-07 11:37)
 ☐ add layout system
