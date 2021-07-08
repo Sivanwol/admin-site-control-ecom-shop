@@ -11,13 +11,13 @@
         "noEmit": true,
         "jsx": "preserve",
         "allowSyntheticDefaultImports": true,
-    
+
         /* Module Resolution */
         "esModuleInterop": true,
         "moduleResolution": "node",
         "resolveJsonModule": true,
         "isolatedModules": true,
-    
+
         /* Type Checking */
         "noUnusedLocals": true,
         "noUnusedParameters": true,
