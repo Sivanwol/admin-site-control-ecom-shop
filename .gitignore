@@ -19,7 +19,7 @@
 # misc
 .DS_Store
 *.pem
-
+src/generated/
 # debug
 *.log
 npm-debug.log*
