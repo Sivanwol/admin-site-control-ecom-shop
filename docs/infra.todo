@@ -11,6 +11,9 @@ Main Task for the infra system
         ✔ add simple client request @done(21-07-08 16:11)
         ✘ add new route that the socket will happend @cancelled(21-07-08 16:11)
 ✔ add sitemap support @done(21-07-07 11:37)
+Graphql server:
+    add support 
+
 ✔ Add i18n system (from next system) @done(21-07-07 11:37)
 ☐ add layout system
     ☐ add uprotected layer

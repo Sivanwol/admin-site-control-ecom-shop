@@ -41,6 +41,7 @@
         ]
     },
     "dependencies": {
+        "apollo-server-micro": "^2.25.2",
         "cors": "2.8.5",
         "express": "^4.17.1",
         "history": "^5.0.0",
