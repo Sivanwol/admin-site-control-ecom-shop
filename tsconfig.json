@@ -19,11 +19,6 @@
         "isolatedModules": true,
 
         /* Type Checking */
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "noImplicitReturns": true,
-        "noFallthroughCasesInSwitch": true,
-        "forceConsistentCasingInFileNames": true,
         "typeRoots": ["./node_modules/@types"]
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

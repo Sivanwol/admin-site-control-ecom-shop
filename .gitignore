@@ -13,7 +13,6 @@
 /out/
 .vscode/
 .idea/
-.tsbuildinfo
 # production
 /build
 *.iml
@@ -34,3 +33,4 @@ yarn-error.log*
 
 # vercel
 .vercel
+tsconfig.tsbuildinfo

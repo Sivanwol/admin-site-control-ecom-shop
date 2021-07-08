@@ -23,7 +23,7 @@ app.prepare().then(async () => {
             console.log('connection')
             socket.emit('status', 'Hello from Socket.io')
             socket.on('test_event', (data: any) => {
-                console.log('websocket recived test_event')
+                console.log('websocket recived test_event', data)
                 socket.emit('test_event', 'Hello from Socket.io')
             })
             socket.on('disconnect', () => {
