@@ -1,26 +1,32 @@
 {
     "compilerOptions": {
-        "target": "esnext",
         "module": "esnext",
-        "lib": ["dom", "esnext"],
-        "incremental": true,
-        "allowJs": false,
-        "checkJs": false,
+        "target": "ES2019",
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext"
+        ],
+        "allowJs": true,
         "skipLibCheck": true,
-        "strict": true,
+        "strict": false,
+        "forceConsistentCasingInFileNames": true,
         "noEmit": true,
-        "jsx": "preserve",
-        "allowSyntheticDefaultImports": true,
-
-        /* Module Resolution */
         "esModuleInterop": true,
         "moduleResolution": "node",
         "resolveJsonModule": true,
         "isolatedModules": true,
-
-        /* Type Checking */
-        "typeRoots": ["./node_modules/@types"]
+        "jsx": "preserve",
+        "typeRoots": [
+            "./node_modules/@types"
+        ]
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-    "exclude": ["node_modules"]
+    "include": [
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
 }

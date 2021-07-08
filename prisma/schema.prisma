@@ -1,11 +1,47 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+// datasource db {
+//     provider = "postgresql"
+//     url      = env("DATABASE_URL")
+// }
+
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+    provider = "sqlite"
+    url      = "file:./dev.db"
 }
 
 generator client {
-  provider = "prisma-client-js"
+    provider = "prisma-client-js"
+}
+
+model User {
+    email String  @unique
+    id    Int     @id @default(autoincrement())
+    name  String?
+    posts Post[]
+}
+
+model Post {
+    authorId  Int?
+    content   String?
+    id        Int     @id @default(autoincrement())
+    published Boolean @default(false)
+    title     String
+    author    User?   @relation(fields: [authorId], references: [id])
+}
+
+model Album {
+    id       Int    @id @default(autoincrement())
+    name     String
+    year     String
+    artist   Artist @relation(fields: [artistId], references: [id])
+    artistId Int
+}
+
+model Artist {
+    id     Int     @id @default(autoincrement())
+    name   String
+    url    String
+    albums Album[]
 }

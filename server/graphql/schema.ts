@@ -1,37 +1,37 @@
 import { makeSchema, objectType, queryType } from 'nexus'
 import { join } from 'path'
-const Query = queryType({
+export const Query = queryType({
     definition(t) {
         t.list.field('albums', {
             type: 'Album',
             args: {
                 first: 'Int',
             },
-            resolve(_root, args, ctx) {
+            resolve(_root: any, args: any, ctx: any) {
                 return ctx.prisma.album.findMany({ take: args.first })
             },
         })
     },
 })
 
-const Artist = objectType({
+export const Artist = objectType({
     name: 'Artist',
-    definition(t) {
+    definition(t: any) {
         t.int('id')
         t.string('name')
         t.string('url')
     },
 })
 
-const Album = objectType({
+export const Album = objectType({
     name: 'Album',
-    definition(t) {
+    definition(t: any) {
         t.int('id')
         t.string('name')
         t.string('year')
         t.field('artist', {
             type: 'Artist',
-            async resolve(album, _args, ctx) {
+            async resolve(album: any, _args: any, ctx: any) {
                 const artist = await ctx.prisma.artist.findFirst({
                     where: { id: album.artistId },
                 })
