@@ -1,63 +1,64 @@
-import { makeSchema, objectType, queryType } from 'nexus'
-import { join } from 'path'
-export const Query = queryType({
+import { objectType, queryType, mutationType, makeSchema } from '@nexus/schema'
+import { nexusPrisma } from 'nexus-plugin-prisma'
+import path from 'path'
+
+const User = objectType({
+    name: 'User',
     definition(t) {
-        t.list.field('albums', {
-            type: 'Album',
-            args: {
-                first: 'Int',
-            },
-            resolve(_root: any, args: any, ctx: any) {
-                return ctx.prisma.album.findMany({ take: args.first })
-            },
-        })
+        t.model.id()
+        t.model.name()
     },
 })
 
-export const Artist = objectType({
-    name: 'Artist',
-    definition(t: any) {
-        t.int('id')
-        t.string('name')
-        t.string('url')
+const Query = queryType({
+    definition(t) {
+        t.list.field('allUsers', {
+            type: 'User',
+            resolve(_parent, _args, ctx) {
+                return ctx.prisma.user.findMany({})
+            },
+        })
+        t.crud.user()
+        t.crud.users()
     },
 })
 
-export const Album = objectType({
-    name: 'Album',
-    definition(t: any) {
-        t.int('id')
-        t.string('name')
-        t.string('year')
-        t.field('artist', {
-            type: 'Artist',
-            async resolve(album: any, _args: any, ctx: any) {
-                const artist = await ctx.prisma.artist.findFirst({
-                    where: { id: album.artistId },
-                })
-                // The ! tells TypeScript to trust us, it won't be null
-                return artist!
+const Mutation = mutationType({
+    definition(t) {
+        t.field('bigRedButton', {
+            type: 'String',
+            async resolve(_parent, _args, ctx) {
+                const { count } = await ctx.prisma.user.deleteMany({})
+                return `${count} user(s) destroyed. Thanos will be proud.`
             },
         })
+
+        t.crud.createOneUser()
+        t.crud.deleteOneUser()
+        t.crud.deleteManyUser()
+        t.crud.updateOneUser()
+        t.crud.updateManyUser()
     },
 })
+
 export const schema = makeSchema({
-    types: [Query, Artist, Album],
-    shouldGenerateArtifacts: process.env.NODE_ENV === 'development',
+    types: [User, Query, Mutation],
+    plugins: [nexusPrisma({ experimentalCRUD: true })],
     outputs: {
-        schema: join(process.cwd(), 'schema.graphql'),
-        typegen: join(process.cwd(), 'nexus.ts'),
+        typegen: path.join(process.cwd(), 'generated', 'nexus-typegen.ts'),
+        schema: path.join(process.cwd(), 'generated', 'schema.graphql'),
     },
-    sourceTypes: {
-        modules: [{ module: '.prisma/client', alias: 'prisma' }],
-        debug: process.env.NODE_ENV === 'development',
-    },
-    contextType: {
-        module: join(process.cwd(), 'src', 'context.ts'),
-        export: 'Context',
-    },
-    nonNullDefaults: {
-        input: true,
-        output: true,
+    typegenAutoConfig: {
+        contextType: 'Context.Context',
+        sources: [
+            {
+                source: '@prisma/client',
+                alias: 'prisma',
+            },
+            {
+                source: path.join(process.cwd(), 'graphql', 'context.ts'),
+                alias: 'Context',
+            },
+        ],
     },
 })

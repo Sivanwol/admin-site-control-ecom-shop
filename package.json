@@ -14,6 +14,7 @@
     "scripts": {
         "dev": "nodemon --exec ts-node --project tsconfig.server.json server",
         "dev:watch": "cross-env NODE_OPTIONS='--inspect' next dev",
+        "dev:debug": "concurrently -r \"yarn run dev:watch\" \"npx graphql-codegen --watch\"",
         "build": "next build && tsc --project tsconfig.server.json",
         "start": "cross-env NODE_ENV=production node .build/server",
         "start:debug": "cross-env NODE_ENV=debug node .build/server",
@@ -29,7 +30,7 @@
         "build-storybook": "build-storybook --no-dll",
         "generate": "yarn run generate:prisma && yarn run generate:nexus",
         "generate:prisma": "prisma generate",
-        "generate:nexus": "ts-node --transpile-only -P tsconfig.nexus.json pages/api"
+        "generate:nexus": "npx graphql-codegen"
     },
     "husky": {
         "hooks": {
@@ -68,6 +69,7 @@
         "primeflex": "^2.0.0",
         "primeicons": "^4.1.0",
         "primereact": "^6.5.0-rc.2",
+        "nexus-plugin-prisma": "^0.24.0",
         "react": "17.0.2",
         "react-apollo": "3.1.5",
         "react-dom": "17.0.2",
@@ -86,9 +88,17 @@
         "superagent": "^6.1.0",
         "ua-parser-js": "^0.7.21",
         "url-join": "^4.0.1",
+        "next-urql": "^2.1.1",
+        "react-is": "^17.0.1",
+        "urql": "^1.11.3",
         "uuid": "^8.3.0"
     },
     "devDependencies": {
+        "@prisma/cli": "2.11.0",
+        "@graphql-codegen/cli": "^1.19.2",
+        "@graphql-codegen/typescript": "^1.17.11",
+        "@graphql-codegen/typescript-operations": "^1.17.10",
+        "@graphql-codegen/typescript-urql": "^2.0.2",
         "@compiled/react": "^0.6.7",
         "@compiled/webpack-loader": "^0.6.7",
         "@next/bundle-analyzer": "^9.1.4",
@@ -127,6 +137,7 @@
         "eslint-config-prettier": "^7.2.0",
         "eslint-plugin-react": "^7.19.0",
         "expect-playwright": "^0.7.2",
+        "concurrently": "^5.3.0",
         "faker": "^4.1.0",
         "husky": "^4.2.3",
         "identity-obj-proxy": "^3.0.0",
