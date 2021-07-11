@@ -23,7 +23,7 @@ Graphql server:
     ✔ make schame gql auto @done(21-07-08 20:26)
         ☐ refector the generete of the schame as i dont trust the code even work
         
-    ☐ build basic m ethods and queries
+    ☐ build basic methods and queries
     ☐ add auth system
     ☐ integrate with firebase user system
     ☐ make sure server run
