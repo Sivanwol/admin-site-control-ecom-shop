@@ -22,6 +22,8 @@ Graphql server:
     ✔ add support @done(21-07-08 20:26)
     ✔ make schame gql auto @done(21-07-08 20:26)
         ☐ refector the generete of the schame as i dont trust the code even work
+            (https://github.com/hexrcs/fullstack-graphql-next-nexus-prisma) or check this on (https://www.apollographql.com/blog/backend/schema-design/modularizing-your-graphql-schema-code/)
+
         
     ☐ build basic methods and queries
     ☐ add auth system
