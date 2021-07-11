@@ -6,7 +6,7 @@ const User = objectType({
     name: 'User',
     definition(t) {
         t.int('id', { description: 'Id of the user' })
-        t.field('name', { type: 'string', description: 'name of the user' })
+        t.field('name', { type: 'String', description: 'name of the user' })
     },
 })
 
@@ -32,14 +32,25 @@ const Mutation = mutationType({
         })
     },
 })
-console.log(path.join(__dirname, '../../generated', 'nexus-typegen.ts'))
-console.log(path.join(__dirname, '../../generated', 'schema.graphql'))
+console.log(
+    path.join(__dirname, '../../../../', 'generated', 'nexus-typegen.ts')
+)
+console.log(path.join(__dirname, '../../../../', 'generated', 'schema.graphql'))
 console.log(path.join(__dirname, 'context.ts'))
 export const schema = makeSchema({
     types: [User, Query, Mutation],
-    plugins: [nexusPrisma({ experimentalCRUD: true })],
     outputs: {
-        typegen: path.join(__dirname, '../../generated', 'nexus-typegen.ts'),
-        schema: path.join(__dirname, '../../generated', 'schema.graphql'),
+        typegen: path.join(
+            __dirname,
+            '../../../../',
+            'generated',
+            'nexus-typegen.ts'
+        ),
+        schema: path.join(
+            __dirname,
+            '../../../../',
+            'generated',
+            'schema.graphql'
+        ),
     },
 })
