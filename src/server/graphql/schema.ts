@@ -1,12 +1,12 @@
-import { objectType, queryType, mutationType, makeSchema } from '@nexus/schema'
+import { objectType, queryType, mutationType, makeSchema } from 'nexus'
 import { nexusPrisma } from 'nexus-plugin-prisma'
 import path from 'path'
 
 const User = objectType({
     name: 'User',
     definition(t) {
-        t.model.id()
-        t.model.name()
+        t.int('id', { description: 'Id of the user' })
+        t.field('name', { type: 'string', description: 'name of the user' })
     },
 })
 
@@ -18,8 +18,6 @@ const Query = queryType({
                 return ctx.prisma.user.findMany({})
             },
         })
-        t.crud.user()
-        t.crud.users()
     },
 })
 
@@ -32,39 +30,16 @@ const Mutation = mutationType({
                 return `${count} user(s) destroyed. Thanos will be proud.`
             },
         })
-
-        t.crud.createOneUser()
-        t.crud.deleteOneUser()
-        t.crud.deleteManyUser()
-        t.crud.updateOneUser()
-        t.crud.updateManyUser()
     },
 })
-console.log(path.join(process.cwd(), '../../generated', 'nexus-typegen.ts'))
-console.log(path.join(process.cwd(), '../../generated', 'schema.graphql'))
-console.log(path.join(process.cwd(), 'graphql', 'context.ts'))
+console.log(path.join(__dirname, '../../generated', 'nexus-typegen.ts'))
+console.log(path.join(__dirname, '../../generated', 'schema.graphql'))
+console.log(path.join(__dirname, 'context.ts'))
 export const schema = makeSchema({
     types: [User, Query, Mutation],
     plugins: [nexusPrisma({ experimentalCRUD: true })],
     outputs: {
-        typegen: path.join(
-            process.cwd(),
-            '../../generated',
-            'nexus-typegen.ts'
-        ),
-        schema: path.join(process.cwd(), '../../generated', 'schema.graphql'),
-    },
-    typegenAutoConfig: {
-        contextType: 'Context.Context',
-        sources: [
-            {
-                source: '@prisma/client',
-                alias: 'prisma',
-            },
-            {
-                source: path.join(process.cwd(), 'graphql', 'context.ts'),
-                alias: 'Context',
-            },
-        ],
+        typegen: path.join(__dirname, '../../generated', 'nexus-typegen.ts'),
+        schema: path.join(__dirname, '../../generated', 'schema.graphql'),
     },
 })
