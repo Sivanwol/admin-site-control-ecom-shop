@@ -1,24 +1,29 @@
 Main Task for the infra system
-✔ add logger system @done (7/6/2021, 11:48:27 PM)
-✔ Add config system (from next system) @done(21-07-07 10:18)
-✔ add seo support @done(21-07-07 16:31)
-✔ add support to socket.io @done(21-07-07 16:59)
-    add client side support follow this git repo for road map 
-    (https://github.com/arch-inc/nextjs-socketio-chat-example/blob/master/components/contexts/socket/SocketProvider.tsx)
-        ✔ add socket provider @started(21-07-08 14:22) @done(21-07-08 16:11) @lasted(1h49m39s)
-        ✔ add socket hooks @done(21-07-08 16:11)
-        ✔ add simple commamds  on server @done(21-07-08 16:11)
-        ✔ add simple client request @done(21-07-08 16:11)
-        ✘ add new route that the socket will happend @cancelled(21-07-08 16:11)
-✔ add sitemap support @done(21-07-07 11:37)
-Socket IO Client:
+General:
+    ☐ Need define the score of this server what the python server better it is bit unclear
+Infra:
+    ✔ add logger system @done (7/6/2021, 11:48:27 PM)
+    ✔ Add config system (from next system) @done(21-07-07 10:18)
+    ✔ add seo support @done(21-07-07 16:31)
+    ✔ add support to socket.io @done(21-07-07 16:59)
+        add client side support follow this git repo for road map 
+        (https://github.com/arch-inc/nextjs-socketio-chat-example/blob/master/components/contexts/socket/SocketProvider.tsx)
+            ✔ add socket provider @started(21-07-08 14:22) @done(21-07-08 16:11) @lasted(1h49m39s)
+            ✔ add socket hooks @done(21-07-08 16:11)
+            ✔ add simple commamds  on server @done(21-07-08 16:11)
+            ✔ add simple client request @done(21-07-08 16:11)
+            ✘ add new route that the socket will happend @cancelled(21-07-08 16:11)
+    ✔ add sitemap support @done(21-07-07 11:37)
+Socket IO Client (can be delay):
     ☐ add basic layout for dynamic event triggers with hooks
     ☐ add field test
     ☐ fix bug that will getting into a look of connect and disconnect when it connected and request the event
 Graphql server:
     ✔ add support @done(21-07-08 20:26)
     ✔ make schame gql auto @done(21-07-08 20:26)
-    ☐ build basic methods and queries
+        ☐ refector the generete of the schame as i dont trust the code even work
+        
+    ☐ build basic m ethods and queries
     ☐ add auth system
     ☐ integrate with firebase user system
     ☐ make sure server run
@@ -26,20 +31,23 @@ Graphql client:
     ☐ add provider and relevent hooks
     ☐ make basic call with redux call for verify all work
 
-✔ Add i18n system (from next system) @done(21-07-07 11:37)
-☐ add layout system
-    ☐ add uprotected layer
-    ☐ add store owners/staff layer
-    ☐ add platform layer
-✔ add unprotected page @done(21-07-07 11:37)
-✔ Build test infra system - this place holder for now @done (7/6/2021, 11:48:39 PM)
-✔ add small test for just see all work on github page @done(21-07-07 00:27)
-☐ add test for unprotected page just basic testing see in the basic test (match title, and page working in general)
-☐ Add Basic logic with firebase system
-☐ Add basic forget password page with firebase system
-☐ add basic register page
-☐ add basic protected page must be login
-☐ add basic profile page
-☐ add basic reset password page
-☐ add logout button
-☐ Add Setting system that data will come from the server side (this is the config server side system , worth check if i can use firebase in some way) 
+UI:
+    Infra:
+        ✔ Add i18n system (from next system) @done(21-07-07 11:37)
+        ☐ add layout system
+            ☐ add uprotected layer
+            ☐ add store owners/staff layer
+            ☐ add platform layer
+        ✔ add unprotected page @done(21-07-07 11:37)
+        ✔ Build test infra system - this place holder for now @done (7/6/2021, 11:48:39 PM)
+        ✔ add small test for just see all work on github page @done(21-07-07 00:27)
+        ☐ add test for unprotected page just basic testing see in the basic test (match title, and page working in general)
+    Users:
+        ☐ Add Basic logic with firebase system
+        ☐ Add basic forget password page with firebase system
+        ☐ add basic register page
+        ☐ add basic protected page must be login
+        ☐ add basic profile page
+        ☐ add basic reset password page
+        ☐ add logout button
+        ☐ Add Setting system that data will come from the server side (this is the config server side system , worth check if i can use firebase in some way) 
