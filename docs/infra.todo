@@ -21,14 +21,15 @@ Socket IO Client (can be delay):
 Graphql server:
     ✔ add support @done(21-07-08 20:26)
     ✔ make schame gql auto @done(21-07-08 20:26)
-        ☐ refector the generete of the schame as i dont trust the code even work
+        ✔ refector the generete of the schame as i dont trust the code even work @done(21-07-11 21:29)
             (https://github.com/hexrcs/fullstack-graphql-next-nexus-prisma) or check this on (https://www.apollographql.com/blog/backend/schema-design/modularizing-your-graphql-schema-code/)
 
         
-    ☐ build basic methods and queries
-    ☐ add auth system
-    ☐ integrate with firebase user system
-    ☐ make sure server run
+    ✔ build basic methods and queries @done(21-07-11 21:29)
+    ☐ add auth system ?? no idea how need check as how
+    ☐ integrate with firebase user system => ?????????????
+    ✔ make sure server run => yay it work without the auth part @done(21-07-11 21:30)
+    make server run with auth system
 Graphql client:
     ☐ add provider and relevent hooks
     ☐ make basic call with redux call for verify all work
