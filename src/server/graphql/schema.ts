@@ -40,13 +40,19 @@ const Mutation = mutationType({
         t.crud.updateManyUser()
     },
 })
-
+console.log(path.join(process.cwd(), '../../generated', 'nexus-typegen.ts'))
+console.log(path.join(process.cwd(), '../../generated', 'schema.graphql'))
+console.log(path.join(process.cwd(), 'graphql', 'context.ts'))
 export const schema = makeSchema({
     types: [User, Query, Mutation],
     plugins: [nexusPrisma({ experimentalCRUD: true })],
     outputs: {
-        typegen: path.join(process.cwd(), 'generated', 'nexus-typegen.ts'),
-        schema: path.join(process.cwd(), 'generated', 'schema.graphql'),
+        typegen: path.join(
+            process.cwd(),
+            '../../generated',
+            'nexus-typegen.ts'
+        ),
+        schema: path.join(process.cwd(), '../../generated', 'schema.graphql'),
     },
     typegenAutoConfig: {
         contextType: 'Context.Context',

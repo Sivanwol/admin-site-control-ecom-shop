@@ -34,5 +34,5 @@ yarn-error.log*
 # vercel
 .vercel
 tsconfig.tsbuildinfo
-generated/*
-!generated/.gitkeep
+src/generated/*
+!src/generated/.gitkeep
