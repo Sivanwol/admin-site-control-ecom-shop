@@ -13,7 +13,27 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "jsx": "preserve",
-        "typeRoots": ["./node_modules/@types"]
+        "typeRoots": ["./node_modules/@types"],
+        "paths": {
+            "@styles/*": ["./src/styles/*"],
+            "@components/*": ["./src/components/*"],
+            "@config/*": ["./src/config/*"],
+            "@api/*": ["./src/api/*"],
+            "@server/*": ["./src/server/*"],
+            "@state/*": ["./src/redux/*"],
+            "@models/*": ["./src/models/*"],
+            "@middlewares/*": ["./src/middlewares/*"],
+            "@layouts/*": ["./src/layouts/*"],
+            "@connectors/*": ["./src/connectors/*"],
+            "@hooks/*": ["./src/utils/hooks/*"],
+            "@utils/*": ["./src/utils/*"],
+            "@services/*": ["./src/services/*"],
+            "@validation/*": ["./src/validation/*"],
+            "@context/*": ["./src/utils/context/*"],
+            "@queries/*": ["./src/queries/*"],
+            "@typeDefs/*": ["./src/types/*"],
+            "@generated/*": ["./generated/*"]
+        }
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
     "exclude": ["node_modules"]
