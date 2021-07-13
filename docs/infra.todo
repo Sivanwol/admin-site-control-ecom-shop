@@ -29,7 +29,7 @@ Graphql server:
     ☐ add auth system ?? no idea how need check as how
     ☐ integrate with firebase user system => ?????????????
     ✔ make sure server run => yay it work without the auth part @done(21-07-11 21:30)
-    make server run with auth system
+    ☐ make server run with auth system
 Graphql client:
     ☐ add provider and relevent hooks
     ☐ make basic call with redux call for verify all work
