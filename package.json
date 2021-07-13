@@ -12,7 +12,7 @@
         "email": "sivan@wolberg.pro"
     },
     "scripts": {
-        "dev": "nodemon --exec ts-node --project tsconfig.server.json server",
+        "dev": "nodemon --exec ts-node --project tsconfig.server.json src/server",
         "dev:watch": "cross-env NODE_OPTIONS='--inspect' next dev",
         "dev:debug": "concurrently -r \"yarn run dev:watch\" \"npx graphql-codegen --watch\"",
         "build": "next build && tsc --project tsconfig.server.json",

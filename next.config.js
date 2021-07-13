@@ -3,7 +3,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 const nextConfig = {
     poweredByHeader: false,
-    trailingSlash: true,
+    trailingSlash: false,
     i18n: {
         locales: ['en'],
         defaultLocale: 'en',
