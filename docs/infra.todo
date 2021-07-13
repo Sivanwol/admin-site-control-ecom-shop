@@ -26,7 +26,7 @@ Graphql server:
 
         
     ✔ build basic methods and queries @done(21-07-11 21:29)
-    ☐ add auth system ?? no idea how need check as how
+    ☐ add auth system ?? no idea how need check as how => check this git repo for better understanding (https://github.com/rwieruch/nextjs-firebase-authentication)
     ☐ integrate with firebase user system => ?????????????
     ✔ make sure server run => yay it work without the auth part @done(21-07-11 21:30)
     ☐ make server run with auth system
