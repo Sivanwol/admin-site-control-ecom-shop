@@ -1,6 +1,10 @@
+const dotenv = require('dotenv')
+const withPlugins = require('next-compose-plugins')
+const withSourceMaps = require('@zeit/next-source-maps')()
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
     enabled: process.env.ANALYZE === 'true',
 })
+dotenv.config()
 const nextConfig = {
     poweredByHeader: false,
     trailingSlash: false,
@@ -29,8 +33,11 @@ const nextConfig = {
             use: ['@compiled/webpack-loader'],
         })
 
+        if (!isServer) {
+            config.resolve.alias['@sentry/node'] = '@sentry/browser'
+        }
+
         return config
     },
 }
-
-module.exports = withBundleAnalyzer(nextConfig)
+export default withPlugins([[withSourceMaps], [withBundleAnalyzer]], nextConfig)

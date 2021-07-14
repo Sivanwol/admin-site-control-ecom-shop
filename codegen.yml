@@ -3,10 +3,13 @@ schema: 'http://localhost:3000/api/graphql' # GraphQL endpoint
 documents: 'src/server/graphql/**/*.graphql.ts' # parse graphql operations in matching files
 generates:
     generated/graphql.tsx: # location for generated types, hooks and components
-        plugins:
-            - 'typescript'
-            - 'typescript-operations'
-            - 'typescript-urql'
+        documents: ./src/queries/*.ts
         config:
-            withComponent: false # we'll use Urql client with hooks instead
+            withHOC: false
+            withComponent: false
             withHooks: true
+        plugins:
+            - add
+            - typescript
+            - typescript-operations
+            - typescript-react-apollo

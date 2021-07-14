@@ -1,3 +1,44 @@
 {
-    "presets": ["next/babel"]
+    "presets": ["next/babel"],
+    "plugins": [
+        [
+            "module-resolver",
+            {
+                "root": ["./"],
+                "alias": {
+                    "@styles/*": ["./src/styles/*"],
+                    "@components/*": ["./src/components/*"],
+                    "@config/*": ["./src/config/*"],
+                    "@api/*": ["./src/api/*"],
+                    "@server/*": ["./src/server/*"],
+                    "@state/*": ["./src/redux/*"],
+                    "@models/*": ["./src/models/*"],
+                    "@middlewares/*": ["./src/middlewares/*"],
+                    "@layouts/*": ["./src/layouts/*"],
+                    "@connectors/*": ["./src/connectors/*"],
+                    "@hooks/*": ["./src/utils/hooks/*"],
+                    "@utils/*": ["./src/utils/*"],
+                    "@services/*": ["./src/services/*"],
+                    "@validation/*": ["./src/validation/*"],
+                    "@context/*": ["./src/utils/context/*"],
+                    "@queries/*": ["./src/queries/*"],
+                    "@typeDefs/*": ["./src/types/*"],
+                    "@generated/*": ["./generated/*"]
+                }
+            }
+        ],
+        "babel-plugin-transform-typescript-metadata",
+        [
+            "@babel/plugin-proposal-decorators",
+            {
+                "legacy": true
+            }
+        ],
+        [
+            "@babel/plugin-proposal-class-properties",
+            {
+                "loose": true
+            }
+        ]
+    ]
 }

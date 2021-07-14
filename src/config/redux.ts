@@ -1,7 +1,7 @@
 import { createStore, compose, applyMiddleware, StoreEnhancer } from 'redux'
 
 import rootReducer from '../redux/reducers'
-import apiMiddleware from '../middlewares/api'
+import apiMiddleware from '../middlewares/client/global/api'
 import { RESTORE_LOCAL_STORAGE_KEY } from './constants'
 
 const isDev = process.env.NODE_ENV !== 'production'

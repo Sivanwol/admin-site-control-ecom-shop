@@ -3,10 +3,10 @@ import urljoin from 'url-join'
 import { Dispatch, Store, ActionCreator } from 'redux'
 
 import { State } from 'history'
-import { BaseAction } from '../utils/types/base-redux'
-import { startNetwork, endNetwork } from '../redux/actions/network'
-import apiUtils from '../utils/api'
-import { BASE_URL, IS_DEBUG_MODE } from '../config/api'
+import { BaseAction } from '../../../utils/types/base-redux'
+import { startNetwork, endNetwork } from '../../../redux/actions/network'
+import apiUtils from '../../../utils/api'
+import { BASE_URL, IS_DEBUG_MODE } from '../../../config/api'
 
 export function dispatchActions(
     dispatch: Dispatch<BaseAction>,
